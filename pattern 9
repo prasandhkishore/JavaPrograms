@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class pattern9_prasandh {
+public static void main (String [] args ){
+
+Scanner s = new Scanner (System.in);
+int n = s.nextInt();
+int pro =1;
+for(int i=1;i<=n;i++)
+{
+   System.out.print(pro+" ");
+   pro = pro *11;
+   System.out.println();
+}
+
+}
+}
