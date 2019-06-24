@@ -1,3 +1,9 @@
+/*Program-3:
+1
+10
+101
+1010
+10101 */
 import java.util.Scanner;
 public class pattern3_prasandh {
 public static void main (String [] args ){
