@@ -1,4 +1,10 @@
-
+/* program-1:
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6 */
 import java.util.Scanner;
 public class pattern1_prasandh {
 public static void main (String [] args ){
