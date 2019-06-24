@@ -1,3 +1,9 @@
+/* Program-9:
+1
+11
+121
+1331
+14641 */
 import java.util.Scanner;
 public class pattern9_prasandh {
 public static void main (String [] args ){
