@@ -1,3 +1,9 @@
+/* Program-10:
+55555
+4444
+333
+22
+1 */
 import java.util.Scanner;
 public class pattern10_prasandh {
 public static void main (String [] args ){
