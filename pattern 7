@@ -1,3 +1,10 @@
+/* Program-7:
+*
+* *
+* * *
+* * * *
+* * * * * 
+*/
 import java.util.Scanner;
 public class pattern7_prasandh {
 public static void main (String [] args ){
