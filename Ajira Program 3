@@ -1,0 +1,19 @@
+/* It is year 1994 and you have come up with a page ranking algo. The more references a page receives, more the points the page gets. The references can be through direct link or through shortened urls (links). Page references to self don't count (both direct/indirect). Some redirects can make you run in loop.
+Given an input like below, output the top 2 pages.
+Input
+5 4
+P1 a1-P2 a2-P3
+P2 a1-S1 a2-P3
+P3
+P4 c1-P4 c2-P4 c3-S3 c4-S4
+P5 a1-S2 s2-S3 a6-S1
+S1~P3
+S2~P4
+S3~S4
+S4~S3
+where 5 in number of pages, and 4 is number of shortened urls.
+P1 a1-P2 a2-P3 is a page P1 with links a1, a2 pointing to P2, P3 respectively
+S1~P3 is a short url S1 pointing to page P3
+Output
+P3
+P2 */
