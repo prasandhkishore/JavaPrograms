@@ -1,0 +1,65 @@
+import java.util.*;
+public class Substring { 
+
+	static int charCount = 256; 
+
+   public static void main(String[] args) { 
+        Scanner s = new Scanner(System.in);
+        String str = s.nextLine();
+        str = str.toLowerCase();
+  
+        int len = maxDistinctChar(str); 
+        System.out.println(len); 
+    } 
+  
+ 
+    static int distinct_char(String str, int n) { 
+  
+      
+        int count[] = new int[charCount]; 
+  
+        for (int i = 0; i < n; i++) { 
+            count[str.charAt(i)]++; 
+        } 
+  
+        int maxDist = 0; 
+        for (int i = 0; i < charCount; i++) { 
+            if (count[i] != 0) { 
+                maxDist++; 
+            } 
+        } 
+  
+        return maxDist; 
+    } 
+  
+    static int maxDistinctChar(String str) { 
+  
+        int n = str.length();   
+  
+   
+        int maxDist = distinct_char(str, n); 
+        int minl = n;   
+  
+   
+        for (int i = 0; i < n; i++) { 
+            for (int j = 0; j < n; j++) { 
+                  
+                String subs = null; 
+                if(i<j) 
+                    subs = str.substring(i, j); 
+                else
+                    subs = str.substring(j, i); 
+                int subs_lenght = subs.length(); 
+                int sub_distinct_char = distinct_char(subs, subs_lenght); 
+  
+                 
+                if (subs_lenght < minl && maxDist == sub_distinct_char) { 
+                    minl = subs_lenght; 
+                } 
+            } 
+        } 
+        return minl; 
+    } 
+  
+   
+} 
