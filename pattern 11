@@ -6,7 +6,7 @@
 * * * * * 
 */
 import java.util.*;
-public class pattern10_prasandh {
+public class pattern11_prasandh {
 public static void main(String [] args){
 
  Scanner s = new Scanner (System.in);
