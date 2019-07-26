@@ -1,0 +1,39 @@
+/*pattern13
+   1
+  121
+ 12321
+1234321
+*/
+import java.util.*;
+public class pattern13_prasandh {
+public static void main(String [] args){
+
+ Scanner s = new Scanner (System.in);
+ int n = s.nextInt();
+ int j,k,m=1,a=1;
+ for(int i=1;i<=n;i++)
+ { 
+  
+   for( k=m;k<n;k++)
+   {
+    System.out.print(" ");
+   }
+   for( j=0;j<i;j++)
+   {  
+   System.out.print(a);
+   a++;
+   }
+   --a;
+   for( j=0;j<i-1;j++)
+   {  
+   a=a-1;
+   System.out.print(a);
+  
+   }
+  a=1;
+  m++;
+   System.out.println();
+}
+
+}
+}
