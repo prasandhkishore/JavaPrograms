@@ -1,0 +1,128 @@
+/* Create the program for Ticket Booking System:
+   1.System shows the no. of ticket available and price per ticket
+   2.The user enter the name, date of birth, no. of tickets for booking
+   3.If the user is senior citizen then they eligible for 50% discount in the bill amount
+   4.System display the remaining tickets available
+   5.If no. of tickets entered by the user is highest than the available tickets, System shouldn't allow for booking
+   
+   Sample Output:
+   **************
+   Total Ticket Availability
+   10
+   Price Per Ticket
+   120
+   
+   Do you want to Book Ticket (yes/no)
+   yes
+   Enter Name
+   Prasandh
+   Enter Date Of Birth
+   31/03/1959
+   Enter No. of Tickets
+   3
+   Your actual Bill Amount is : 360
+   You are Senior Citizen and You are eligible for 50% discount
+   Your Net Amount is : 180
+   The Remaining Ticket availability is : 7
+   
+   Do you want to continue Booking (yes/no)
+   yes
+   Enter Name
+   Kishore
+   Enter Date Of Birth
+   27/02/1996
+   Enter No. of Tickets
+   8
+   Sorry The Ticket availability is only 7
+   */
+   
+import java.util.*;
+public class TicketBookingSystem_Prasandh {
+ public static void main(String [] args) {
+ Server server = new Server();
+ server.ticketAvailabilityDetails(); 
+}
+}
+
+class Server {
+    Scanner s = new Scanner (System.in);
+    public static int ticket = 10;
+    public static int price = 120;
+    public static int billAmount;
+public void ticketAvailabilityDetails() {
+  System.out.println("Total Tickets Availability :");
+  System.out.println(ticket);
+  System.out.println("Price per Ticket :");
+  System.out.println(price);
+  System.out.println("Do you want to Book ticket (yes/no)");
+  String condition = s.next();
+
+  if(condition.equals("yes"))
+   getUserDetails();
+
+  else
+    System.out.println("Thanks for visiting our website!!!");
+
+}
+
+public void getUserDetails() {
+   System.out.println("Enter Name :");
+   String name = s.next();
+   System.out.println("Enter Date Of Birth (dd/mm/yyyy) :");
+   String dateOfBith = s.next();
+   String [] dob = dateOfBith.split("/");
+   int age = 2019-Integer.parseInt(dob[2]);
+   System.out.println("Enter No. of Tickets :");
+   int requiredTickets = s.nextInt();
+ 
+   if(requiredTickets<=ticket)
+    {
+      ticket = ticket - requiredTickets;
+      billAmount = requiredTickets * price;
+      BillingSection billingSection = new BillingSection();
+      if(age>=30)
+         billingSection.discountPrice();
+      else
+         billingSection.normalPrice();
+     }
+  else
+   System.out.println("Sorry the ticket availibility is only : " + ticket);
+   
+}
+}
+
+class BillingSection {
+    Server server = new Server(); 
+   ContinueBooking continueBooking = new ContinueBooking();
+  public void discountPrice(){
+    System.out.println("Your Actual Bill Amount is : "+ server.billAmount);
+    System.out.println("You are Senior Citizen and you are eligible for 50% discount");
+    System.out.println("Your Net Amount is : "+ server.billAmount/2);
+    System.out.println("The Remaining Ticket availability is : "+server.ticket);
+    System.out.println();
+    continueBooking.repeat();
+}   
+
+  public void normalPrice(){
+    System.out.println("Your Bill Amount is : "+ server.billAmount);
+    System.out.println("The Remaining Ticket availability is : "+server.ticket);
+    System.out.println();
+    continueBooking.repeat();
+}  
+
+}
+
+class ContinueBooking {
+  Scanner s = new Scanner (System.in);
+  Server server = new Server(); 
+  public void repeat() {
+     System.out.println("Do you want to continue Booking (yes/no)");
+     String respond = s.next();
+      if(respond.equals("yes"))
+         server.getUserDetails();
+      else
+         System.out.println("Thanks for visiting our website!!!");
+
+}
+
+}
